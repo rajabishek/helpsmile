@@ -11,11 +11,54 @@
 |
 */
 
-$factory->define(Helpsmile\User::class, function (Faker\Generator $faker) {
+$factory->define(Helpsmile\Organisation::class, function (Faker\Generator $faker) {
+    
+    $company = ucwords($faker->company);
+    
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
-    ];
+		'name' => $company,
+		'domain' => str_slug($company,'-')
+	];
+});
+
+$factory->define(Helpsmile\User::class, function (Faker\Generator $faker) {
+    
+    $designations = ['Telecaller','Team Leader','Field Executive','Field Coordinator','Manager'];
+	$max = sizeof($designations) - 1;
+	$designation = $designations[$faker->numberBetween(0,$max)];
+
+    return [
+		'email' => $faker->safeEmail,
+		'password' => bcrypt(str_random(10)),
+		'fullname' => $faker->name,
+		'address' => $faker->address,
+		'mobile' => $faker->phoneNumber,
+		'designation' => $designation,
+		'remember_token' => str_random(10),
+	];
+});
+
+$factory->define(Helpsmile\Donor::class, function (Faker\Generator $faker) {
+    return [
+		'email' => $faker->safeEmail,
+		'fullname' => $faker->name,
+		'mobile' => $faker->phoneNumber,
+	];
+});
+
+$factory->define(Helpsmile\Donation::class, function (Faker\Generator $faker) {
+    return [
+		'promised_amount' => $faker->randomNumber(4),
+		'appointment' => $faker->dateTime('now'),
+		'created_at' => $faker->dateTimeThisYear,
+	];
+});
+
+$factory->define(Helpsmile\Address::class, function (Faker\Generator $faker) {
+    return [
+		'address' => $faker->streetAddress,
+		'location' => $faker->streetName,
+		'latitude' => $faker->latitude,
+		'longitude' => $faker->longitude,
+	];
 });
