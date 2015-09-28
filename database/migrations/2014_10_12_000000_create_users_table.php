@@ -14,9 +14,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+
+            $table->integer('organisation_id')->unsigned();
+            $table->foreign('organisation_id')->references('id')->on('organisations')->onDelete('cascade');
+
             $table->string('email')->unique();
+            $table->string('fullname');
             $table->string('password', 60);
+            $table->text('address')->nullable();
+            $table->string('mobile')->nullable();
+            $table->enum('designation', ['Admin','Team Leader','Telecaller','Field Coordinator','Field Executive','Manager']);
+            $table->string('profile')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
