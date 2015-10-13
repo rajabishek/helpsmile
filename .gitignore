@@ -24,8 +24,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+/public/packages
+/public/uploads
 /vendor
 /node_modules
 Homestead.yaml
 Homestead.json
 .env
+
