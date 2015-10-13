@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -144,6 +145,7 @@ return [
         Helpsmile\Providers\AuthServiceProvider::class,
         Helpsmile\Providers\EventServiceProvider::class,
         Helpsmile\Providers\RouteServiceProvider::class,
+        Helpsmile\Providers\NavigationServiceProvider::class,
 
     ],
 
@@ -193,7 +195,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Navigation' => Helpsmile\Facades\Navigation::class,
     ],
 
 ];
