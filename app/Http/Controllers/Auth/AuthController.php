@@ -7,59 +7,87 @@ use Validator;
 use Helpsmile\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Laracasts\Flash\FlashNotifier;
+use Helpsmile\Repositories\UserRepositoryInterface;
+use Helpsmile\Repositories\OrganisationRepositoryInterface;
+use Helpsmile\Services\Validation\FormValidationException;
+use Helpsmile\Exceptions\EmployeeNotFoundException;
+use Helpsmile\Exceptions\OrganisationNotFoundException;
+use Helpsmile\Exceptions\InvalidConfirmationCodeException;
+use Helpsmile\Mailers\UserMailer;
 
 class AuthController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
-
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    /**
+     * The flash notifier.
+     *
+     * @var \Laracasts\Flash\FlashNotifier
+     */
+    protected $flash;
 
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(FlashNotifier $flash)
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+        $this->flash = $flash;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Show the application registration form.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+    public function getRegister()
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+        return view('pages.register');
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Register the given organisation.
      *
      * @param  array  $data
-     * @return User
+     * @return \Illuminate\Http\Response
      */
-    protected function create(array $data)
+    protected function registerOrganisation($data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $data['confirmation_code'] = str_random(30);
+        $organisation = app(OrganisationRepositoryInterface::class)->create($data);
+        
+  
+        $data['designation'] = 'Admin';      
+        $user = $this->users->createForOrganisation($data,$organisation);
+
+        //Email the user
+        $mailer = new UserMailer($user);
+        return $mailer->emailVerification()->queue()->deliver(); 
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postRegister(Request $request, OrganiationRegistrationForm $form)
+    {
+        $input = $request->all();
+
+        try
+        {
+            $form->validate($input);
+            $this->registerOrganisation($input);
+
+            $this->flash->success('Thanks for registering your company with us! Please check your email.');
+            return redirect()->back();
+        }
+        catch(FormValidationException $e)
+        {
+            $this->flash->error('Please review the following errors.');
+            return redirect()->back()>withInput()->withErrors($e->getErrors());
+        }
     }
 }
