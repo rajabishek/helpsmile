@@ -1,0 +1,19 @@
+{
+  "name": "Helpsmile",
+  "version": "0.0.1",
+  "authors": [
+    "Raj Abishek <rajabishek@hotmail.com>"
+  ],
+  "description": "App to manage and improve workflow to collect funds locally",
+  "main": "server.php",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "pusher": "~2.2.4",
+    "toastr": "~2.1.1",
+    "eonasdan-bootstrap-datetimepicker": "~4.7.14",
+    "cropit": "~0.4.0",
+    "handlebars": "~3.0.3",
+    "trmix": "~1.1.0"
+  }
+}
