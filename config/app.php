@@ -145,8 +145,13 @@ return [
         Helpsmile\Providers\AuthServiceProvider::class,
         Helpsmile\Providers\EventServiceProvider::class,
         Helpsmile\Providers\RouteServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Helpsmile\Providers\NavigationServiceProvider::class,
-
+        Helpsmile\Providers\RepositoryServiceProvider::class,
+        Helpsmile\Providers\ReportingServiceProvider::class,
+        Helpsmile\Providers\ValidationServiceProvider::class,
     ],
 
     /*
@@ -197,6 +202,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
+        'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
+        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Navigation' => Helpsmile\Facades\Navigation::class,
     ],
 
