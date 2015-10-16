@@ -3,7 +3,6 @@
 namespace Helpsmile\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Helpsmile\Http\Requests;
 use Helpsmile\Http\Controllers\Controller;
 use Auth;
 
