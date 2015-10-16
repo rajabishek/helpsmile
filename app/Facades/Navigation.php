@@ -1,6 +1,4 @@
-<?php 
-
-namespace Helpsmile\Facades;
+<?php namespace Helpsmile\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
