@@ -2,14 +2,14 @@
 
 use Helpsmile\Exceptions\InvalidContactInformationException;
 use Mail;
-use Helpsmile\Models\Donation;
+use Helpsmile\Donation;
 
 class DonorMailer extends Mailer
 {
     /**
      * Create a new DonorMailer instance.
      *
-     * @param \Helpsmile\Models\Donation $donation
+     * @param \Helpsmile\Donation $donation
      */
     public function __construct(Donation $donation)
     {

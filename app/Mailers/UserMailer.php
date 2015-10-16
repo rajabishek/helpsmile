@@ -2,7 +2,7 @@
 
 use Helpsmile\Exceptions\InvalidContactInformationException;
 use Mail;
-use Helpsmile\Models\User;
+use Helpsmile\User;
 use Subscription;
 
 class UserMailer extends Mailer
@@ -10,7 +10,7 @@ class UserMailer extends Mailer
     /**
      * Create a new abstract mailer instance.
      *
-     * @param \Helpsmile\Models\User $user
+     * @param \Helpsmile\User $user
      */
     public function __construct(User $user)
     {
