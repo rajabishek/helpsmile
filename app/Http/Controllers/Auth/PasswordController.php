@@ -2,13 +2,15 @@
 
 namespace Helpsmile\Http\Controllers\Auth;
 
-use Helpsmile\Http\Controllers\Controller;
+use Auth;
+use Password;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Helpsmile\Http\Controllers\Controller;
 use Helpsmile\Repositories\OrganisationRepositoryInterface;
+use Helpsmile\Repositories\UserRepositoryInterface;
+use Helpsmile\Mailers\UserMailer;
 
 class PasswordController extends Controller
 {
@@ -92,13 +94,13 @@ class PasswordController extends Controller
      * @param  string  $token
      * @return \Illuminate\Http\Response
      */
-    public function getReset($token = null)
+    public function getReset($domain, $token = null)
     {
         if (is_null($token)) {
             throw new NotFoundHttpException;
         }
-
-        return view('auth.reset')->with('token', $token);
+        $organisation = $this->organisations->findByDomain($domain);
+        return view('auth.reset',compact('domain','token','organisation'));
     }
 
     /**
@@ -107,7 +109,7 @@ class PasswordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postReset(Request $request)
+    public function postReset($domain, UserRepositoryInterface $users, Request $request)
     {
         $this->validate($request, [
             'token' => 'required',
@@ -123,14 +125,33 @@ class PasswordController extends Controller
             $this->resetPassword($user, $password);
         });
 
-        switch ($response) {
+        switch($response) 
+        {
             case Password::PASSWORD_RESET:
-                return redirect($this->redirectPath())->with('status', trans($response));
+                $message = 'Your password has been reset. You may now log in.';
+
+                $organisation = $this->organisations->findByDomain($domain);
+                $user = $users->findByEmailForOrganisation($credentials['email'],$organisation);
+                
+                $mailer = new UserMailer($user);
+                $mailer->passwordChanged()->queue()->deliver(); 
+
+                if($request->ajax())
+                {
+                    flash()->success($message);
+                    return response()->json(['success' => true,'redirect' => route('auth.getLogin',$domain)]);
+                }
+
+                flash()->success($message);
+                return redirect()->route('auth.getLogin',$domain);
 
             default:
-                return redirect()->back()
-                            ->withInput($request->only('email'))
-                            ->withErrors(['email' => trans($response)]);
+
+                if($request->ajax())
+                    return response()->json(['success' => false,'errors' => trans($response)]);              
+
+                flash()->error(trans($response));
+                return redirect()->back()->withInput();
         }
     }
 
@@ -144,10 +165,9 @@ class PasswordController extends Controller
     protected function resetPassword($user, $password)
     {
         $user->password = bcrypt($password);
-
         $user->save();
 
-        Auth::login($user);
+        //Auth::login($user);
     }
 
     /**

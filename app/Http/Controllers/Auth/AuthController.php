@@ -13,6 +13,7 @@ use Helpsmile\Repositories\OrganisationRepositoryInterface;
 use Helpsmile\Repositories\UserRepositoryInterface;
 use Helpsmile\Services\Forms\LoginForm;
 use Helpsmile\Services\Forms\RegistrationForm;
+use Helpsmile\Services\Forms\ResendEmailVerificationForm;
 use Helpsmile\Services\Validation\FormValidationException;
 use Helpsmile\Exceptions\EmployeeNotFoundException;
 use Helpsmile\Exceptions\OrganisationNotFoundException;
@@ -109,7 +110,7 @@ class AuthController extends Controller
     public function getLogin($domain)
     {
         $organisation = $this->organisations->findByDomain($domain);
-        return view('pages.login',compact('organisation'));
+        return view('pages.login',compact('domain','organisation'));
     }
 
     /**
@@ -214,5 +215,63 @@ class AuthController extends Controller
         
         flash()->success('You have been successfully logged out.');
         return redirect()->route('auth.getLogin',$domain);
+    }
+
+    /**
+     * Present a form for resending the account verification email to the admin of the organisation.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getResend()
+    {
+        return view('pages.resend');
+    }
+
+    /**
+     * Resend the account verification email to the admin of the organisation.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postResend(ResendEmailVerificationForm $form, Request $request)
+    {
+        try
+        {
+            $input = $request->all();
+            $form->validate($input);
+            $organisation = $this->organisations->findByDomain($input['domain']);
+            $user = $this->users->findByEmailForOrganisation($input['email'], $organisation);
+
+            if($organisation->confirmed)
+            {
+                flash()->success("{$organisation->name}'s account is already verified, you may log in here.");
+                return redirect()->route('auth.getLogin',$organisation->domain);
+            }
+
+            if($user->hasRole('Admin'))
+            {
+                //Email the user
+                $mailer = new UserMailer($user);
+                $mailer->emailVerification()->queue()->deliver(); 
+                flash()->success('The verification email has been resent. Please check your email.');
+                return redirect()->back();
+            }
+            else 
+                throw new EmployeeNotFoundException;
+
+        }
+        catch(OrganisationNotFoundException $e)
+        {
+            flash()->error('The provided domain does not exist.');
+            return redirect()->back()->withInput();
+        }
+        catch(EmployeeNotFoundException $e)
+        {
+            flash()->error("The provided email address is not the same as {$organisation->name}'s admin.");
+            return redirect()->back()->withInput();
+        }
+        catch(FormValidationException $e)
+        {
+           return redirect()->back()->withInput()->withErrors($e->getErrors());
+        }
     }
 }
