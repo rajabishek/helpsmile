@@ -92,8 +92,10 @@ class Builder
             $inner = '';
             
         $class = $isActive ? ' class="active"' : '';
-        $anchor = '<a'. $class . ' href="'.route($item['route'],$this->organisation).'">'.$inner.$item['label'].'</a>';
-        
+        if($this->organisation)
+            $anchor = '<a'. $class . ' href="'.route($item['route'],$this->organisation).'">'.$inner.$item['label'].'</a>';
+        else
+            $anchor = '<a'. $class . ' href="'.route($item['route']).'">'.$inner.$item['label'].'</a>';
         return $anchor;
     }
 
