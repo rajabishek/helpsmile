@@ -24,6 +24,24 @@ class ExcelUploadService
     protected $errors;
 
     /**
+     * Employee validation form to santize the employee data before persistance.
+     *
+     * @var \Helpsmile\Services\Forms\AddEmployeeForm
+     */
+    protected $form;
+
+    /**
+     * Create an instance of ExcelUploadService
+     *
+     * @param  \Helpsmile\Services\Forms\AddEmployeeForm  $form
+     * @return void
+     */
+    public function __construct(AddEmployeeForm $form)
+    {
+        $this->form = $form;
+    }
+
+    /**
      * Get the errors.
      *
      * @return array
@@ -61,8 +79,6 @@ class ExcelUploadService
             || $mime == 'application/vnd.ms-excel'){
 
             $users = Excel::load($file->getRealPath())->toArray();
-        
-            $form = app(AddEmployeeForm::class);
             
             //Column names in excel are in row number 1
             //Therefore actual data starts from row number 2
@@ -72,7 +88,7 @@ class ExcelUploadService
                 try
                 {
                     $data['password'] = $data['password_confirmation'] = 'password';
-                    $form->validate($data);
+                    $this->form->validate($data);
                 }
                 catch(FormValidationException $e){
                     $this->errors[$rowNumber] = $e->getErrors()->all();
