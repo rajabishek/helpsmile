@@ -42,23 +42,23 @@
                     <!-- END Lock Screen Avatar -->
 
                     <!-- Lock Screen Form -->
-                    {{ Form::open(['route' => 'auth.verification.postResend','class' => 'js-validation-lock form-horizontal push-30-t push-30']) }}
+                    {!! Form::open(['route' => 'auth.verification.postResend','class' => 'js-validation-lock form-horizontal push-30-t push-30']) !!}
                         <div class="form-group">
                             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
                                 <div class="form-material {{set_error('domain', $errors)}}">
-                                    {{ Form::text('domain',Input::old('domain'),['class' => 'form-control','id' => 'domain','size' => 20, 'style' => 'padding-right: 120px']) }}
+                                    {!! Form::text('domain',old('domain'),['class' => 'form-control','id' => 'domain','size' => 20, 'style' => 'padding-right: 120px']) !!}
                                     <span class="append">.helpsmile.net</span>
-                                    {{ Form::label('domain', 'Provide the company URL') }}
-                                    {{ get_error('domain', $errors) }}
+                                    {!! Form::label('domain', 'Provide the company URL') !!}
+                                    {!! get_error('domain', $errors) !!}
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
                                 <div class="form-material {{set_error('email', $errors)}}">
-                                    {{ Form::email('email',Input::old('email'),['class' => 'form-control','placeholder' => "admin's email address"]) }}
-                                    {{ Form::label('email','Email Address') }}
-                                    {{ get_error('email', $errors) }}
+                                    {!! Form::email('email',old('email'),['class' => 'form-control','placeholder' => "admin's email address"]) !!}
+                                    {!! Form::label('email','Email Address') !!}
+                                    {!! get_error('email', $errors) !!}
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 <button class="btn btn-block btn-success" type="submit"><i class="si si-paper-plane pull-right"></i> Resend</button>
                             </div>
                         </div>
-                    {{ Form::close() }}
+                    {!! Form::close() !!}
                     <!-- END Lock Screen Form -->
                 </div>
             </div>
