@@ -34,8 +34,11 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check()) {
-            return redirect('/home');
+        if ($this->auth->check())
+        {
+            $domain = $this->auth->user()->organisation->domain;
+            $home = $this->auth->user()->getHomeRoute();
+            return redirect()->route($home,$domain);
         }
 
         return $next($request);
