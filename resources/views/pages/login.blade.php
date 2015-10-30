@@ -12,7 +12,7 @@
                 <div class="block-header bg-primary">
                     <ul class="block-options">
                         <li>
-                            <a href="{{url('/password/remind')}}">Forgot Password?</a>
+                            <a href="{{ route('password.getEmail',$domain) }}">Forgot Password?</a>
                         </li>
                     </ul>
                     <h3 class="block-title">Login</h3>
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <div class="form-material form-material-primary floating">
-                                    {!! Form::text('email',Input::old('email'),['class' => 'form-control','id' => 'email']) !!}
+                                    {!! Form::text('email',old('email'),['class' => 'form-control','id' => 'email']) !!}
                                     {!! Form::label('email', 'Email Address') !!}
                                 </div>
                             </div>
