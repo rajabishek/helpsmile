@@ -55,10 +55,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            {{ Form::open(['route' => ['admin.users.destroy',$domain,$user->id], 'method' => 'DELETE']) }}
+                            {!! Form::open(['route' => ['admin.users.destroy',$domain,$user->id], 'method' => 'DELETE']) !!}
 				                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-				                {{Form::submit('Remove',array('class' => 'btn btn-danger'))}}
-				            {{ Form::close() }}
+				                {!! Form::submit('Remove',array('class' => 'btn btn-danger')) !!}
+				            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
