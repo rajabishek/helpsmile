@@ -135,7 +135,7 @@
                                     <div class="form-group {{set_error('mobile', $errors)}}">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="form-material">
-                                                {!! Form::text('mobile',Input::old('mobile'),['class' => 'form-control','placeholder' => 'Provide the mobile number of the employee']) !!}
+                                                {!! Form::text('mobile',old('mobile'),['class' => 'form-control','placeholder' => 'Provide the mobile number of the employee']) !!}
                                                 {!! Form::label('mobile', 'Mobile') !!}
                                                 {!! get_error('mobile', $errors) !!}
                                             </div>
