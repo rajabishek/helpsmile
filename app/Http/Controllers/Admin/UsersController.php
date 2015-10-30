@@ -155,14 +155,15 @@ class UsersController extends Controller{
      */
     public function postImport($domain, Request $request, ExcelUploadService $uploader)
     {
-        $uploader = $uploader->forOrganisation(Auth::user()->organisation);
-        $success = $uploader->handle($request->file('file'));
+        $organisation = Auth::user()->organisation;
+        $uploader = $uploader->forOrganisation($organisation);
+        $users = $uploader->handle($request->file('file'));
 
-        if($success)
+        if($users)
         {
             foreach ($users as $user) {
                 $user['password'] = 'password';
-                $this->users->create($user);
+                $this->users->createForOrganisation($user,$organisation);
             }
             return response()->json(['success' => true]);
 
