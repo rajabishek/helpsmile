@@ -3,6 +3,7 @@
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Helpsmile\User;
 use Helpsmile\Organisation;
+use Helpsmile\Services\Forms\AddEmployeeForm;
 use Helpsmile\Services\Validation\FormValidationException;
 use Excel;
 
@@ -61,7 +62,7 @@ class ExcelUploadService
 
             $users = Excel::load($file->getRealPath())->toArray();
         
-            $form = $this->users->getUserCreationForm();
+            $form = app(AddEmployeeForm::class);
             
             //Column names in excel are in row number 1
             //Therefore actual data starts from row number 2
@@ -81,7 +82,7 @@ class ExcelUploadService
             if($this->errors)
                return false;
             
-            return true;
+            return $users;
         
         }
         else
