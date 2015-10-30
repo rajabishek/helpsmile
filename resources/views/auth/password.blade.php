@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <div class="form-material form-material-primary floating">
-                                    {!! Form::text('email',Input::old('email'),['class' => 'form-control','id' => 'email']) !!}
+                                    {!! Form::text('email',old('email'),['class' => 'form-control','id' => 'email']) !!}
                                     {!! Form::label('email', 'Email Address') !!}
                                 </div>
                             </div>
