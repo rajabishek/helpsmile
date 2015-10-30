@@ -29,5 +29,9 @@ class Kernel extends HttpKernel
         'auth' => \Helpsmile\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Helpsmile\Http\Middleware\RedirectIfAuthenticated::class,
+        'verify-domain' => \Helpsmile\Http\Middleware\VerifyDomain::class,
+        'designation' => \Helpsmile\Http\Middleware\DesignationMiddleware::class,
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }
