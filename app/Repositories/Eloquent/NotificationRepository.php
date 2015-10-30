@@ -57,7 +57,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $notification = $this->getNew();
 
         $notification->title = 'New Donor';
-        $notification->type = 'new donor';
+        $notification->type = 'donor.created';
         $notification->description = "{$donation->donor->fullname} has promised to donate ₹ {$donation->promised_amount}";
         $notification->happened_at = $donation->created_at;
         $notification->save();
@@ -87,7 +87,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $notification = $this->getNew();
 
         $notification->title = 'New Donation';
-        $notification->type = 'new donation';
+        $notification->type = 'donation.created';
         $notification->description = "{$donation->donor->fullname} has promised to donate ₹ {$donation->promised_amount}";
         $notification->happened_at = $donation->created_at;
         $notification->save();
@@ -117,7 +117,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $notification = $this->getNew();
 
         $notification->title = 'Field Executive Assigned';
-        $notification->type = 'fieldexecutive assigned';
+        $notification->type = 'donation.assigned';
         $notification->description = "{$donation->fieldexecutive->fullname} was assigned to collect donation amount of ₹ {$donation->promised_amount} from {$donation->donor->fullname}";
         $notification->happened_at = Carbon::now();
         $notification->save();
@@ -145,7 +145,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $notification = $this->getNew();
 
         $notification->title = 'Succesfull Donation';
-        $notification->type = 'donation successful';
+        $notification->type = 'donation.successful';
         $notification->description = "{$donation->donor->fullname} has successfuly donated ₹ {$donation->donated_amount}";
         $notification->happened_at = $donation->donated_at;
         $notification->save();
@@ -175,7 +175,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $notification = $this->getNew();
 
         $notification->title = 'Donation Cancelled ';
-        $notification->type = 'donation cancelled';
+        $notification->type = 'donation.cancelled';
         $notification->description = "{$donation->donor->fullname} was disinterested in donating ₹ {$donation->promised_amount}";
         $notification->happened_at = $donation->cancelled_at;
         $notification->save();
