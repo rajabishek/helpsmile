@@ -7,6 +7,7 @@ use Laracasts\Flash\Flash;
 use Helpsmile\Repositories\UserRepositoryInterface;
 use Helpsmile\Services\Validation\FormValidationException;
 use Helpsmile\Services\Upload\ImageUploadService;
+use Helpsmile\Services\Forms\ChangePasswordForm;
 
 trait ManagesSettingsAndHandlesUserProfile{
 
@@ -16,13 +17,6 @@ trait ManagesSettingsAndHandlesUserProfile{
      * @var \Helpsmile\Repositories\UserRepositoryInterface
      */
     protected $users;
-
-    /**
-     * The image uploader service to handle profile uploads
-     *
-     * @var \Helpsmile\Services\Upload\ImageUploadService
-     */
-    protected $uploader;
 
     /**
      * Create a new PublisherSettingsController instance.
@@ -64,12 +58,12 @@ trait ManagesSettingsAndHandlesUserProfile{
             
             $this->users->edit($user,$request->all());  
 
-            Flash::success('You have succesfully saved the details.');
-            return $this->redirectRoute($this->settingsRoute,$domain);
+            flash()->success('You have succesfully saved the details.');
+            return redirect()->route($this->settingsRoute,$domain);
         }
         catch(FormValidationException $e)
         {
-            return $this->redirectBackWithErrors($e->getErrors());
+            return redirect()->back()->withInput()->withErrors($e->getErrors());
         }
 	}
 
@@ -107,14 +101,15 @@ trait ManagesSettingsAndHandlesUserProfile{
      *
      * @return Response
      */
-    public function changePassword($domain, Hasher $hasher, Request $request)
+    public function changePassword($domain, Hasher $hasher, ChangePasswordForm $form, Request $request)
     {
         try
         {
             $input = $request->all();
             $user = $request->user();
-            $this->users->getChangePasswordForm()->validate($input);
-            // Get passwords from the user's input
+            
+            $form->validate($input);
+            
             $oldPassword   = $input['old_password'];
             $password       = $input['password'];
 
