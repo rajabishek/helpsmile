@@ -58,14 +58,14 @@
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-6 {{set_error('email', $errors)}}">
                                     <div class="form-material form-material-success">
-                                        <input type="email" name="email" class="form-control" id="email" data-toggle="popover" title="" data-placement="top" data-content="This email address will be used for setting up the admin account for the company you are registering." data-original-title="Admin Account" value="{{ Input::old('email') }}" placeholder="Please provide your email">
+                                        <input type="email" name="email" class="form-control" id="email" data-toggle="popover" title="" data-placement="top" data-content="This email address will be used for setting up the admin account for the company you are registering." data-original-title="Admin Account" value="{{ old('email') }}" placeholder="Please provide your email">
                                         {!! Form::label('email', 'Email Address') !!}
                                         {!! get_error('email', $errors) !!}
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 {{set_error('fullname', $errors)}}">
                                     <div class="form-material form-material-success">
-                                        {!! Form::text('fullname',Input::old('fullname'),['class' => 'form-control','id' => 'fullname','placeholder' => 'Please provide your fullname']) !!}
+                                        {!! Form::text('fullname',old('fullname'),['class' => 'form-control','id' => 'fullname','placeholder' => 'Please provide your fullname']) !!}
                                         {!! Form::label('fullname', 'Fullname') !!}
                                         {!! get_error('fullname', $errors) !!}
                                     </div>
@@ -90,14 +90,14 @@
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-6 {{set_error('name', $errors)}}">
                                     <div class="form-material form-material-success">
-                                        {!! Form::text('name',Input::old('name'),['class' => 'form-control','id' => 'name','placeholder' => 'Provide the name of your company']) !!}
+                                        {!! Form::text('name',old('name'),['class' => 'form-control','id' => 'name','placeholder' => 'Provide the name of your company']) !!}
                                         {!! Form::label('name', 'Company name') !!}
                                         {!! get_error('name', $errors) !!}
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 {{set_error('domain', $errors)}}">
                                     <div class="form-material form-material-success">
-                                        {!! Form::text('domain',Input::old('domain'),['class' => 'form-control','id' => 'domain','size' => 20, 'style' => 'padding-right: 120px']) !!}
+                                        {!! Form::text('domain',old('domain'),['class' => 'form-control','id' => 'domain','size' => 20, 'style' => 'padding-right: 120px']) !!}
                                         <span class="append">.helpsmile.net</span>
                                         {!! Form::label('domain', 'Choose a company URL') !!}
                                         {!! get_error('domain', $errors) !!}
