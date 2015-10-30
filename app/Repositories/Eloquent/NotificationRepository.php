@@ -65,7 +65,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $users = $organisation->users()
                             ->where('designation','Field Coordinator')
                             ->orWhere('designation','Manager')
-                            ->lists('id');
+                            ->lists('id')->toArray();
 
         $users[] = $donation->teamleader->id;
 
@@ -95,7 +95,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $users = $organisation->users()
                             ->where('designation','Field Coordinator')
                             ->orWhere('designation','Manager')
-                            ->lists('id');
+                            ->lists('id')->toArray();
 
         $users[] = $donation->teamleader->id;
 
@@ -125,7 +125,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $users = $organisation->users()
                             ->where('designation','Field Coordinator')
                             ->orWhere('designation','Manager')
-                            ->lists('id');
+                            ->lists('id')->toArray();
 
         $notification->users()->sync($users);
 
@@ -153,7 +153,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $users = $organisation->users()
                             ->where('designation','Field Coordinator')
                             ->orWhere('designation','Manager')
-                            ->lists('id');
+                            ->lists('id')->toArray();
 
         $users[] = $donation->teamleader->id;
 
@@ -183,7 +183,7 @@ class NotificationRepository extends AbstractRepository implements NotificationR
         $users = $organisation->users()
                             ->where('designation','Field Coordinator')
                             ->orWhere('designation','Manager')
-                            ->lists('id');
+                            ->lists('id')->toArray();
 
         $users[] = $donation->teamleader->id;
 
