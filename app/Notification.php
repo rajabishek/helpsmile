@@ -30,6 +30,6 @@ class Notification extends Model
 	 */
 	public function users()
     {
-        return $this->belongsToMany('Helpsmile\User');
+        return $this->belongsToMany('Helpsmile\User')->withTimestamps();
     }
 }

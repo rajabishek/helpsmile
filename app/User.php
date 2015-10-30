@@ -189,7 +189,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function notifications()
     {
-        return $this->belongsToMany('Helpsmile\Notification');
+        return $this->belongsToMany('Helpsmile\Notification')->withTimestamps();
     }
 
     /**
