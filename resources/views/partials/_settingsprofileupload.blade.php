@@ -103,7 +103,7 @@
             <div class="block-content">
                 <div class="js-img"></div>
                 <br />
-                {!! Form::open(['route' => $changeProfilePostRoute,'class' => 'form-horizontal push-5-t','id' => 'profile-upload-form']) !!}
+                {!! Form::open(['route' => [$changeProfilePostRoute,$domain],'class' => 'form-horizontal push-5-t','id' => 'profile-upload-form']) !!}
                 <button class="btn btn-success" id="profile-upload-submit">Upload</button>
                 {!! Form::close() !!}
             </div>
