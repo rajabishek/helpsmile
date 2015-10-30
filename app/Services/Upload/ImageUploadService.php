@@ -4,7 +4,8 @@ use Intervention\Image\Facades\Image;
 use Helpsmile\Filesystem\FilesystemManager;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Foundation\Application;
-use Helpsmile\Models\User;
+use Helpsmile\User;
+use Storage;
 
 class ImageUploadService
 {
@@ -28,24 +29,6 @@ class ImageUploadService
      * @var int
      */
     protected $size = 250;
-
-    /**
-     * Filesystem instance.
-     *
-     * @var \Helpsmile\FileSystem\FilesystemManager
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new ImageUploadService instance.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
-     */
-    public function __construct(Application $app)
-    {
-        $this->filesystem = $app->make('filesystem');
-    }
 
     /**
      * Enable CORS from the given origin.
@@ -97,7 +80,7 @@ class ImageUploadService
      */
     protected function getFile($path)
     {
-        return $this->filesystem->disk('local')->get($path);
+        return Storage::disk('local')->get($path);
     }
 
     /**
@@ -108,7 +91,7 @@ class ImageUploadService
      */
     protected function getFileSize($path)
     {
-        return $this->filesystem->disk('local')->size($path);
+        return Storage::disk('local')->size($path);
     }
 
     /**
@@ -149,14 +132,14 @@ class ImageUploadService
      * Update the profile image for the given user
      *
      * @param  string  $filename
-     * @param  \Helpsmile\Models\User  $user
+     * @param  \Helpsmile\User  $user
      * @return boolean
      */
     protected function updateProfileForUser($filename, User $user)
     {
         $filepath = $this->directory . '/' . $user->profile;
-        if($user->profile && $this->filesystem->disk('local')->exists($filepath)){
-            $this->filesystem->disk('local')->delete($filepath);
+        if($user->profile && Storage::disk('local')->exists($filepath)){
+            Storage::disk('local')->delete($filepath);
         }
         
         $user->profile = $filename;
