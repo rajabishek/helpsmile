@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -148,6 +148,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Helpsmile\Providers\NavigationServiceProvider::class,
         Helpsmile\Providers\RepositoryServiceProvider::class,
         Helpsmile\Providers\ReportingServiceProvider::class,
@@ -204,7 +205,9 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
-        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
+        'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Gravatar'   => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Navigation' => Helpsmile\Facades\Navigation::class,
     ],
 
