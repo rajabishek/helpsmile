@@ -81,37 +81,37 @@
                                 <div class="alert alert-danger alert-dismissable" id="change-donor-details-validation-errors" style="display:none;">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 </div>
-                                {{ Form::model($donor,['route' => ['teamleader.donors.update',$domain,$donor->id],'method' => 'PUT','class' => 'form-horizontal push-10-t push-10','id' => 'change-donor-details-form']) }}
+                                {!! Form::model($donor,['route' => ['teamleader.donors.update',$domain,$donor->id],'method' => 'PUT','class' => 'form-horizontal push-10-t push-10','id' => 'change-donor-details-form']) !!}
                                     <div class="form-group">
                                         <div class="col-xs-12">
                                             <div class="form-material">
-                                                {{ Form::text('fullname',null,['class' => 'form-control']) }}
-                                                {{ Form::label('fullname','Fullname') }}
+                                                {!! Form::text('fullname',null,['class' => 'form-control']) !!}
+                                                {!! Form::label('fullname','Fullname') !!}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-xs-12">
                                             <div class="form-material">
-                                                {{ Form::email('email',null,['class' => 'form-control']) }}
-                                                {{ Form::label('email','Email Address') }}
+                                                {!! Form::email('email',null,['class' => 'form-control']) !!}
+                                                {!! Form::label('email','Email Address') !!}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-xs-12">
                                             <div class="form-material">
-                                                {{ Form::text('mobile',null,['class' => 'form-control']) }}
-                                                {{ Form::label('mobile','Mobile') }}
+                                                {!! Form::text('mobile',null,['class' => 'form-control']) !!}
+                                                {!! Form::label('mobile','Mobile') !!}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-xs-12">
-                                            {{ Form::submit('Change Details',['class' => 'btn btn-sm btn-primary']) }}
+                                            {!! Form::submit('Change Details',['class' => 'btn btn-sm btn-primary']) !!}
                                         </div>
                                     </div>
-                                {{ Form::close() }}
+                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>

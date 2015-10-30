@@ -74,7 +74,7 @@
                             <!-- Steps Content -->
                             <div class="block-content tab-content">
                                 <!-- Step 1 -->
-                                <div class="tab-pane fade fade-up in push-30-t push-50 active" id="simple-classic-progress-step1">
+                                <div class="tab-pane fade fade-up in push-30-t push-50 active" id="simple-classic-progress-step1" data-step="1">
                                     <div class="form-group {{set_error('fullname', $errors)}}">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="form-material">
@@ -106,7 +106,7 @@
                                 <!-- END Step 1 -->
 
                                 <!-- Step 2 -->
-                                <div class="tab-pane fade fade-up push-30-t push-50" id="simple-classic-progress-step2">
+                                <div class="tab-pane fade fade-up push-30-t push-50" id="simple-classic-progress-step2" data-step="2">
                                     <div class="form-group {{set_error('address', $errors)}}">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="form-material">
@@ -229,6 +229,10 @@ $(function () {
         $(this).parent().submit();
     });
     $('.datetime-picker').datetimepicker();
+
+    step = $('.has-error:first').closest('.tab-pane').data('step');
+        if(step)
+            $('.js-wizard-simple').bootstrapWizard('show',step - 1);
 });
 </script>
 @stop
