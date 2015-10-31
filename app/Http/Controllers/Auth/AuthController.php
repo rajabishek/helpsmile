@@ -90,7 +90,9 @@ class AuthController extends Controller
     {
         try
         {
-            $this->registerOrganisation($request->all());
+            $input = $request->all();
+            $form->validate($input);
+            $this->registerOrganisation($input);
 
             flash()->success('Thanks for registering your company with us! Please check your email.');
             return redirect()->back();
