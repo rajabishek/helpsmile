@@ -177,7 +177,7 @@
                 <!-- Section Content -->
                 <div class="push-20-t push-20 text-center">
                     <h3 class="h4 push-20 visibility-hidden" data-toggle="appear">Imagine the next great thing. Then build it.</h3>
-                    <a class="btn btn-rounded btn-noborder btn-lg btn-success visibility-hidden" data-toggle="appear" data-class="animated bounceIn" href="frontend_pricing.html">Get Started Today</a>
+                    <a class="btn btn-rounded btn-noborder btn-lg btn-success visibility-hidden" data-toggle="appear" data-class="animated bounceIn" href="{{ route('auth.getRegister') }}">Get Started Today</a>
                 </div>
                 <!-- END Section Content -->
             </section>
