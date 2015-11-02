@@ -77,7 +77,7 @@ class AuthController extends Controller
 
         //Email the user
         $mailer = new UserMailer($user);
-        //return $mailer->emailVerification()->queue()->deliver(); 
+        return $mailer->emailVerification()->queue()->deliver(); 
     }
 
     /**
