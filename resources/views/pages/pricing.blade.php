@@ -29,61 +29,27 @@
             <section class="content content-boxed overflow-hidden">
                 <!-- Section Content -->
                 <div class="row push-20-t push-20">
-                    <div class="col-sm-6 col-lg-3 visibility-hidden" data-toggle="appear" data-offset="50" data-class="animated fadeInUp">
-                        <!-- Developer Plan -->
-                        <a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">Developer</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">$9</div>
-                                <div class="h5 font-w300 text-muted">per month</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>2</strong> Projects</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>10GB</strong> Storage</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>15</strong> Clients</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Email</strong> Support</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default">Sign Up</span>
-                            </div>
-                        </a>
-                        <!-- END Developer Plan -->
-                    </div>
-                    <div class="col-sm-6 col-lg-3 visibility-hidden" data-toggle="appear" data-offset="50" data-timeout="200" data-class="animated fadeInUp">
+                    <div class="col-sm-6 col-lg-4 col-sm-offset-3 col-lg-offset-4 visibility-hidden" data-toggle="appear" data-offset="50" data-timeout="200" data-class="animated fadeInUp">
                         <!-- Startup Plan -->
                         <a class="block block-bordered block-link-hover3 text-center" href="frontend_signup.html">
                             <div class="block-header">
                                 <h3 class="block-title text-primary">Startup</h3>
                             </div>
                             <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 text-primary push-10">$29</div>
+                                <div class="h1 font-w700 text-primary push-10">$50</div>
                                 <div class="h5 font-w300 text-muted">per month</div>
                             </div>
                             <div class="block-content">
                                 <table class="table table-borderless table-condensed">
                                     <tbody>
                                         <tr>
-                                            <td><strong>10</strong> Projects</td>
+                                            <td><strong>10</strong> Employees</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>30GB</strong> Storage</td>
+                                            <td><strong>Single</strong> Branch</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>100</strong> Clients</td>
+                                            <td><strong>50</strong> Field Executives</td>
                                         </tr>
                                         <tr>
                                             <td><strong>FULL</strong> Support</td>
@@ -96,74 +62,6 @@
                             </div>
                         </a>
                         <!-- END Startup Plan -->
-                    </div>
-                    <div class="col-sm-6 col-lg-3 visibility-hidden" data-toggle="appear" data-offset="50" data-timeout="400" data-class="animated fadeInUp">
-                        <!-- Business Plan -->
-                        <a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">Business</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">$49</div>
-                                <div class="h5 font-w300 text-muted">per month</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>50</strong> Projects</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>100GB</strong> Storage</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>1000</strong> Clients</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>FULL</strong> Support</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default">Sign Up</span>
-                            </div>
-                        </a>
-                        <!-- END Business Plan -->
-                    </div>
-                    <div class="col-sm-6 col-lg-3 visibility-hidden" data-toggle="appear" data-offset="50" data-timeout="600" data-class="animated fadeInUp">
-                        <!-- VIP Plan -->
-                        <a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">
-                            <div class="block-header">
-                                <h3 class="block-title">VIP</h3>
-                            </div>
-                            <div class="block-content block-content-full bg-gray-lighter">
-                                <div class="h1 font-w700 push-10">$99</div>
-                                <div class="h5 font-w300 text-muted">per month</div>
-                            </div>
-                            <div class="block-content">
-                                <table class="table table-borderless table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>Unlimited</strong> Projects</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Unlimited</strong> Storage</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Unlimited</strong> Clients</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>FULL</strong> Support</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                <span class="btn btn-default">Sign Up</span>
-                            </div>
-                        </a>
-                        <!-- END VIP Plan -->
                     </div>
                 </div>
                 <!-- END Section Content -->

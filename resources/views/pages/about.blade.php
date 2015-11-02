@@ -71,7 +71,7 @@
                                             <p class="font-s13">Amazing times!</p>
                                         </div>
                                     </li>
-                                    <li class="visibility-hidden" data-toggle="appear" data-timeout="300" data-class="animated fadeInRight">
+                                    {{-- <li class="visibility-hidden" data-toggle="appear" data-timeout="300" data-class="animated fadeInRight">
                                         <div class="list-timeline-time">2014</div>
                                         <i class="fa fa-user-plus list-timeline-icon bg-success"></i>
                                         <div class="list-timeline-content">
@@ -93,7 +93,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li class="visibility-hidden" data-toggle="appear" data-timeout="400" data-class="animated fadeInRight">
                                         <div class="list-timeline-time">2015</div>
                                         <i class="si si-like list-timeline-icon bg-primary"></i>
@@ -134,23 +134,13 @@
                     <div class="row items-push-2x push-50-t text-center">
                         <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150">
                             <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar4.jpg" alt="">
-                            <div class="h4 text-white-op push-10-t push-5">Sailesh Dev</div>
+                            <a href="https://in.linkedin.com/pub/sailesh-dev/7b/2b7/282"><div class="h4 text-white-op push-10-t push-5">Sailesh Dev</div></a>
                             <div class="h6 text-gray">Co-founder and CEO</div>
                         </div>
                         <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150" data-timeout="150">
                             <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar16.jpg" alt="">
-                            <div class="h4 text-white-op push-10-t push-5">Raj Abishek</div>
+                            <a href="https://in.linkedin.com/in/rajabishek"><div class="h4 text-white-op push-10-t push-5">Raj Abishek</div></a>
                             <div class="h6 text-gray">Co-founder and CTO</div>
-                        </div>
-                        <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150" data-timeout="300">
-                            <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar5.jpg" alt="">
-                            <div class="h4 text-white-op push-10-t push-5">Pragadeeswaran</div>
-                            <div class="h6 text-gray">Marketing</div>
-                        </div>
-                        <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150" data-timeout="50">
-                            <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar16.jpg" alt="">
-                            <div class="h4 text-white-op push-10-t push-5">Kaniamuthu</div>
-                            <div class="h6 text-gray">Support</div>
                         </div>
                     </div>
                     <!-- END Section Content -->
