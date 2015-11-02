@@ -9,16 +9,16 @@
                         <a class="font-w600" href="{{ route('home') }}">Home</a>
                     </li>
                     <li>
-                        <a class="font-w600" href="frontend_features.html">Features</a>
+                        <a class="font-w600" href="{{ route('home') }}">Features</a>
                     </li>
                     <li>
-                        <a class="font-w600" href="frontend_pricing.html">Pricing</a>
+                        <a class="font-w600" href="{{ route('pricing') }}">Pricing</a>
                     </li>
                     <li>
                         <a class="font-w600" href="{{ route('about') }}">About Us</a>
                     </li>
                     <li>
-                        <a class="font-w600" href="frontend_contact.html">Contact Us</a>
+                        <a class="font-w600" href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -29,10 +29,10 @@
                         <a class="font-w600" href="{{ route('auth.getLogin') }}">Log In</a>
                     </li>
                     <li>
-                        <a class="font-w600" href="{{ route('auth.getLogin') }}">Sign Up</a>
+                        <a class="font-w600" href="{{ route('auth.getRegister') }}">Sign Up</a>
                     </li>
                     <li>
-                        <a class="font-w600" href="frontend_support.html">Support Center</a>
+                        <a class="font-w600" href="{{ route('support') }}">Support Center</a>
                     </li>
                     <li>
                         <a class="font-w600" href="javascript:void(0)">Privacy Policy</a>
