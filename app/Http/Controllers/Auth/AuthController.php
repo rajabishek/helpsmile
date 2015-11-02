@@ -207,6 +207,45 @@ class AuthController extends Controller
     }
 
     /**
+     * Confirm the confirmation code and login the registered user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function confirm($confirmationCode)
+    {
+        try{
+            if(!$confirmationCode)
+                throw new InvalidConfirmationCodeException;
+
+            $organisation = $this->organisations->findByConfirmationCode($confirmationCode);
+
+            $organisation->confirmed = true;
+            $organisation->confirmation_code = null;
+            $organisation->save();
+
+            //Email the user confirmating account creation
+            $user = $this->users->getAdminForOrganisation($organisation);
+            $mailer = new UserMailer($user);
+            $mailer->welcome()->queue()->deliver(); 
+
+            flash()->message('You have successfully verified your account. Please log in.');
+            return redirect()->route('auth.getLogin',$organisation->domain);
+        }
+        catch(InvalidConfirmationCodeException $e)
+        {
+            return view('errors.404');
+        }
+        catch(EmployeeNotFoundException $e)
+        {
+            return view('errors.500');
+        }
+        catch(OrganisationNotFoundException $e)
+        {
+            return view('errors.500');
+        }
+    }
+
+    /**
      * Log the user out of the application.
      *
      * @return \Illuminate\Http\Response
