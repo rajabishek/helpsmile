@@ -2,17 +2,25 @@
 
 namespace Helpsmile\Listeners;
 
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Helpsmile\Repositories\WebhookRepositoryInterface;
 use Helpsmile\Events\Donors\NewDonorHasAgreedToContribute;
 use Helpsmile\Events\Donors\ExistingDonorHasAgreedToContribute;
 use Helpsmile\Events\Donations\FieldExecutiveWasAssignedForDonation;
 use Helpsmile\Events\Donations\DonationWasSuccessful;
 use Helpsmile\Events\Donations\DonationWasCancelled;
+use Helpsmile\Jobs\HitEndpoint;
 use Helpsmile\Organisation;
-use Queue;
 
 class WebhooksListener extends EventListener 
 {
+
+    /**
+     * Trait to help push jobs on the queue
+     *
+     * @var \Illuminate\Foundation\Bus\DispatchesJobs
+     */
+    use DispatchesJobs;
 
     /**
      * Webhook Repository
@@ -45,14 +53,12 @@ class WebhooksListener extends EventListener
         $webhooks = $this->webhooks->findAllForOrganisation($organisation);
         if($webhooks->count() > 0)
         {
-            foreach ($webhooks as $webhook) {
+            foreach ($webhooks as $webhook) 
+            {
                 $data = ['url' => $webhook->url,'object' => $object->toArray(), 'event' => $event];
                 
-                Queue::push(
-                    'Helpsmile\Jobs\HitEndpoint@hitEndpointWithDataForEvent',
-                    $data,
-                    'webhooks'
-                );
+                $job = (new HitEndpoint($data))->onQueue('emails');
+                $this->dispatch($job);
             }
         }
     }
