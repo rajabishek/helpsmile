@@ -11,7 +11,7 @@
                     <i class="fa fa-times"></i>
                 </button>
                 <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
-                <a class="h5 text-white" href="{{ route('admin.users.index') }}">
+                <a class="h5 text-white" href="{{ route('admin.users.index', $domain) }}">
                     <i class="fa fa-circle-o-notch text-primary"></i> <span class="h4 font-w600 sidebar-mini-hide">ne</span>
                 </a>
             </div>
