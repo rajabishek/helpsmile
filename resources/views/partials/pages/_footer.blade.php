@@ -26,7 +26,7 @@
                 <h3 class="h5 font-w600 text-uppercase push-20">Support</h3>
                 <ul class="list list-simple-mini font-s13">
                     <li>
-                        <a class="font-w600" href="{{ route('auth.getLogin') }}">Log In</a>
+                        <a class="font-w600" href="{{ route('auth.getRegister') }}">Log In</a>
                     </li>
                     <li>
                         <a class="font-w600" href="{{ route('auth.getRegister') }}">Sign Up</a>
