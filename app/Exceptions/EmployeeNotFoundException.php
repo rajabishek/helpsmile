@@ -1,4 +1,6 @@
-<?php namespace Helpsmile\Exceptions;
+<?php 
+
+namespace Helpsmile\Exceptions;
 
 class EmployeeNotFoundException extends AbstractException
 {
