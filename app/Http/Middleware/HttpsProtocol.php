@@ -38,7 +38,7 @@ class HttpsProtocol
             '2803:f800::/32',
         ]);
         if (!$request->secure() && env('USE_HTTPS') == true) {
-            return redirect()->secure($request->getRequestUri());
+            return redirect()->secure($request->path());
         }
 
         return $next($request);
