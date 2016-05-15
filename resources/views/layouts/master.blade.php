@@ -46,7 +46,7 @@
 
         <!-- Bootstrap and OneUI CSS framework -->
         {!! Html::style('assets/css/bootstrap.min.css', [], true) !!}
-        {!! Html::style('assets/css/oneui.css',['id' => 'css-main'], [], true) !!}
+        {!! Html::style('assets/css/oneui.css',['id' => 'css-main'], true) !!}
         @show
         <!-- END Stylesheets -->
     </head>
