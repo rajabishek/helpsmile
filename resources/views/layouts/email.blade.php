@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width" />
         <meta name="format-detection" content="telephone=no" />
         @yield('meta')
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css' />
         <title>@yield('title', 'Helpsmile')</title>
         <style type="text/css">
             /* ====== Client-specific Styles Bring inline: No ====== */

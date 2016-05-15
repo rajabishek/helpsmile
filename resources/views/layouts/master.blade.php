@@ -38,7 +38,7 @@
         @section('styles')
         <!-- Stylesheets -->
         <!-- Web fonts -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
         <!-- Page JS Plugins CSS -->
         {!! Html::style('assets/js/plugins/slick/slick.min.css', [], true) !!}
