@@ -15,6 +15,7 @@ class HttpsProtocol
      */
     public function handle($request, Closure $next)
     {
+        $proxyIps = [];
         if($forwardedFor = $request->headers->get('X_FORWARDED_FOR')) {
             $forwardedIps = explode(", ", $forwardedFor);
 
