@@ -16,7 +16,7 @@ class HttpsProtocol
     public function handle($request, Closure $next)
     {
         $request->setTrustedProxies([$request->getClientIp()]);
-        if (($request->header('x-forwarded-proto') <> 'https') && env('USE_HTTPS', false)) {
+        if (!$request->secure() && env('USE_HTTPS') == true) {
             return redirect()->secure($request->path());
         }
 
