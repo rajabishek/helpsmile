@@ -165,6 +165,7 @@ return [
         Helpsmile\Providers\RepositoryServiceProvider::class,
         Helpsmile\Providers\ReportingServiceProvider::class,
         Helpsmile\Providers\ValidationServiceProvider::class,
+        Fideloper\Proxy\TrustedProxyServiceProvider::class,
     ],
 
     /*
