@@ -103,10 +103,10 @@
 @parent
 <!-- Page JS Plugins -->
 <script src="//maps.google.com/maps/api/js?sensor=true"></script>
-<script src="{{ asset('assets/js/plugins/gmapsjs/gmaps.min.js') }}"></script>
+<script src="{{ secure_asset('assets/js/plugins/gmapsjs/gmaps.min.js') }}"></script>
 
 <!-- Page JS Code -->
-<script src="{{ asset('assets/js/pages/frontend_contact.js') }}"></script>
+<script src="{{ secure_asset('assets/js/pages/frontend_contact.js') }}"></script>
 <script>
     $(function () {
         // Init page helpers (Appear plugin)

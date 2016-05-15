@@ -90,7 +90,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 <!-- Notification 6 -->
 <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full2"  bgcolor="#303030"style="background-color: rgb(48, 48, 48);">
     <tr>
-        <td align="center" style="background-image: url({{ asset('assets/img/emails/not6_bg_image.jpg') }}); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat;" id="not6">
+        <td align="center" style="background-image: url({{ secure_asset('assets/img/emails/not6_bg_image.jpg') }}); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat;" id="not6">
         
             
             <!-- Mobile Wrapper -->
@@ -124,7 +124,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
                                             <td width="100%" height="30"></td>
                                         </tr>
                                         <tr>
-                                            <td width="100%"><span ><img src="{{ asset('assets/img/emails/not6_icon75px.png') }}" width="75" alt="" border="0" ></span></td>
+                                            <td width="100%"><span ><img src="{{ secure_asset('assets/img/emails/not6_icon75px.png') }}" width="75" alt="" border="0" ></span></td>
                                         </tr>
                                         <tr>
                                             <td width="100%" height="30"></td>

@@ -115,7 +115,7 @@
 
 @section('scripts')
 @parent
-{!! Html::script('assets/js/core/jquery.slimscroll.min.js') !!}
+{!! Html::script('assets/js/core/jquery.slimscroll.min.js', [], true) !!}
 <script>
     $(function () {
         App.initHelpers('slimscroll');

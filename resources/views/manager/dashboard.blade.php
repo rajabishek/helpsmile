@@ -182,8 +182,8 @@
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
-{!! Html::script('assets/js/core/jquery.slimscroll.min.js') !!}
-{!! Html::script('packages/handlebars/handlebars.min.js') !!}
+{!! Html::script('assets/js/core/jquery.slimscroll.min.js', [], true) !!}
+{!! Html::script('packages/handlebars/handlebars.min.js', [], true) !!}
 
 <!-- Page JS Code -->
 <script id="notification-template" type="text/x-handlebars-template">
@@ -194,8 +194,8 @@
     <div><small class="text-muted">@{{ happened_at }}</small></div>
 </li>
 </script>
-{!! Html::script('js/reporting.js') !!}
-{!! Html::script('js/notifications.js') !!}
+{!! Html::script('js/reporting.js', [], true) !!}
+{!! Html::script('js/notifications.js', [], true) !!}
 <script>
     $(function () {
         // Init page helpers (SlimScroll plugin)

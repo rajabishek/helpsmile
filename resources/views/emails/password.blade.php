@@ -198,7 +198,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 											
 												<table width="265" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tr>
-														<td width="100%" align="center" style="text-align: center;"><span ><img src="{{ asset('assets/img/emails/image_77px_not2.png') }}" width="77" alt="" border="0" ></span></td>
+														<td width="100%" align="center" style="text-align: center;"><span ><img src="{{ secure_asset('assets/img/emails/image_77px_not2.png') }}" width="77" alt="" border="0" ></span></td>
 													</tr>
 												</table>							
 											</td>

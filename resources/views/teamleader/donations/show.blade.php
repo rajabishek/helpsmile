@@ -166,5 +166,5 @@
 <!-- Page JS Plugins -->
 {!! Html::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places') !!}
 <!-- Page JS Plugins -->
-{!! Html::script('js/plotmap.js') !!}
+{!! Html::script('js/plotmap.js', [], true) !!}
 @stop

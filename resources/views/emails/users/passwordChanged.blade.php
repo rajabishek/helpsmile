@@ -102,7 +102,7 @@ p {padding: 0!important; margin-top: 0!important; margin-right: 0!important; mar
 <!-- Notification 5 -->
 <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full"  bgcolor="#303030"style="background-color: rgb(48, 48, 48);">
     <tr>
-        <td style="background-image: url({{ asset('assets/img/emails/not5_bg_image.jpg') }}); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat;" id="not5">
+        <td style="background-image: url({{ secure_asset('assets/img/emails/not5_bg_image.jpg') }}); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat;" id="not5">
         
             
             <!-- Mobile Wrapper -->

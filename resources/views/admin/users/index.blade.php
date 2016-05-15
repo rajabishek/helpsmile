@@ -3,8 +3,8 @@
 @section('title', 'Manage Employees')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
 @parent
 @stop
 
@@ -155,7 +155,7 @@
 
 @section('scripts')
 @parent
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
 <script>
 	$(function () {
 		App.initHelpers(['select2']);

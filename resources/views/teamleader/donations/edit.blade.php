@@ -3,10 +3,10 @@
 @section('title', 'Edit Donation')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
 @parent
-{!! Html::style('packages/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') !!}
+{!! Html::style('packages/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css', [], true) !!}
 @stop
 
 
@@ -200,17 +200,17 @@
 @section('scripts')
 @parent
 <!-- Page JS Plugins -->
-{!! Html::script('assets/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js') !!}
-{!! Html::script('packages/moment/min/moment.min.js') !!}
-{!! Html::script('packages/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}
-{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js') !!}
-{!! Html::script('assets/js/plugins/masked-inputs/jquery.maskedinput.min.js') !!}
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
+{!! Html::script('assets/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js', [], true) !!}
+{!! Html::script('packages/moment/min/moment.min.js', [], true) !!}
+{!! Html::script('packages/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/masked-inputs/jquery.maskedinput.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
 {!! Html::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places') !!}
 
 <!-- Page JS Code -->
-{!! Html::script('assets/js/pages/base_forms_wizard.js') !!}
-{!! Html::script('js/marklocation.js') !!}
+{!! Html::script('assets/js/pages/base_forms_wizard.js', [], true) !!}
+{!! Html::script('js/marklocation.js', [], true) !!}
 <script>
 $(function () {
     App.initHelpers(['masked-inputs','select2']);

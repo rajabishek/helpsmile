@@ -4,7 +4,7 @@
 
 @section('styles')
 @parent
-<link rel="stylesheet" href="{{ URL::asset('css/jquery.Jcrop.min.css') }}">
+<link rel="stylesheet" href="{{ URL::secure_asset('css/jquery.Jcrop.min.css') }}">
 <style type="text/css">
 /* Hide file input */
 input[name=filedata] {
@@ -64,14 +64,14 @@ input[name=filedata] {
   };
 </script>
  <!-- Page JS Plugins -->
-{!! Html::script('js/uploader/FileAPI.min.js') !!}
-{!! Html::script('js/uploader/FileAPI.exif.js') !!}
-{!! Html::script('js/uploader/jquery.fileapi.js') !!}
-{!! Html::script('js/uploader/jquery.Jcrop.min.js') !!}
-{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js') !!}
+{!! Html::script('js/uploader/FileAPI.min.js', [], true) !!}
+{!! Html::script('js/uploader/FileAPI.exif.js', [], true) !!}
+{!! Html::script('js/uploader/jquery.fileapi.js', [], true) !!}
+{!! Html::script('js/uploader/jquery.Jcrop.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js', [], true) !!}
 
  <!-- Page JS Code -->
-{!! Html::script('js/settingsvalidation.js') !!}
-{!! Html::script('js/profileupload.js') !!}
-{!! Html::script('js/changepassword.js') !!}
+{!! Html::script('js/settingsvalidation.js', [], true) !!}
+{!! Html::script('js/profileupload.js', [], true) !!}
+{!! Html::script('js/changepassword.js', [], true) !!}
 @stop

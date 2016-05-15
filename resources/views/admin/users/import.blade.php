@@ -212,7 +212,7 @@ input[name=file] {
 
 
 @section('scripts')
-{!! Html::script('packages/handlebars/handlebars.min.js') !!}
+{!! Html::script('packages/handlebars/handlebars.min.js', [], true) !!}
 <script id="File-Element-Template" type="text/x-handlebars-template">
 <p class="working">
     <div class="row">
@@ -241,8 +241,8 @@ input[name=file] {
 </script>
 @parent
 <!-- jQuery File Upload Dependencies -->
-{!! Html::script('js/jquery.ui.widget.js') !!}
-{!! Html::script('js/jquery.iframe-transport.js') !!}
-{!! Html::script('js/jquery.fileupload.js') !!}
-{!! Html::script('js/excelimport.js') !!}
+{!! Html::script('js/jquery.ui.widget.js', [], true) !!}
+{!! Html::script('js/jquery.iframe-transport.js', [], true) !!}
+{!! Html::script('js/jquery.fileupload.js', [], true) !!}
+{!! Html::script('js/excelimport.js', [], true) !!}
 @stop

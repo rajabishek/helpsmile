@@ -35,7 +35,7 @@
                 </div>
                 <div class="row visibility-hidden" data-toggle="appear" data-class="animated fadeInUp">
                     <div class="col-sm-8 col-sm-offset-2">
-                        <img class="img-responsive pull-b" src="{{ asset('assets/img/various/promo2.jpg') }}" alt="">
+                        <img class="img-responsive pull-b" src="{{ secure_asset('assets/img/various/promo2.jpg') }}" alt="">
                     </div>
                 </div>
                 <!-- END Section Content -->

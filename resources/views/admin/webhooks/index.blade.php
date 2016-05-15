@@ -3,8 +3,8 @@
 @section('title', 'Manage Webhooks')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
 @parent
 @stop
 
@@ -173,9 +173,9 @@
 </table>
 </script>
 @parent
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
-{!! Html::script('packages/handlebars/handlebars.min.js') !!}
-{!! Html::script('js/webhooks.js') !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
+{!! Html::script('packages/handlebars/handlebars.min.js', [], true) !!}
+{!! Html::script('js/webhooks.js', [], true) !!}
 <script>
 	$(function () {
 		App.initHelpers(['select2']);
