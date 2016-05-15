@@ -15,18 +15,7 @@ class HttpsProtocol
      */
     public function handle($request, Closure $next)
     {
-        $proxyIps = [];
-        if($forwardedFor = $request->headers->get('X_FORWARDED_FOR')) {
-            $forwardedIps = explode(", ", $forwardedFor);
-
-            foreach($forwardedIps as $forwardedIp) {
-                if( \Symfony\Component\HttpFoundation\IpUtils::checkIp($forwardedIp, $proxyIps) ) {
-                    $proxyIps[] = $request->server->get('REMOTE_ADDR');
-                    break;
-                }
-            }
-        }
-        $request->setTrustedProxies($proxyIps); 
+        $request->setTrustedProxies( [ $request->getClientIp() ] );
         
         if (!$request->secure() && env('USE_HTTPS') === true) {
             return redirect()->secure($request->getRequestUri());
