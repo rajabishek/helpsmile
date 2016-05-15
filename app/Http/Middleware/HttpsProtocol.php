@@ -15,6 +15,8 @@ class HttpsProtocol
      */
     public function handle($request, Closure $next)
     {
+        $request->setTrustedProxies( [ $request->getClientIp() ] ); 
+        
         if (!$request->secure() && env('USE_HTTPS') === true) {
             return redirect()->secure($request->getRequestUri());
         }
