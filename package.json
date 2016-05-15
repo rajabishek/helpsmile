@@ -4,10 +4,11 @@
     "gulp": "^3.8.8"
   },
   "dependencies": {
-    "laravel-elixir": "^3.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "bootstrap-sass": "^3.0.0",
+    "bower": "^1.7.9",
+    "laravel-elixir": "^3.0.0"
   },
-    "scripts": {
-        "postinstall": "bower install && gulp --production"
-    }
+  "scripts": {
+    "postinstall": "bower install && gulp --production"
+  }
 }
