@@ -2,7 +2,6 @@
 
 use Helpsmile\Exceptions\InvalidContactInformationException;
 use Helpsmile\Models\Organisation;
-use Illuminate\Contracts\Mail\Mailer;
 
 abstract class Mailer
 {
@@ -78,11 +77,11 @@ abstract class Mailer
      *
      * @return boolean
      */
-    public function deliver(Mailer $mailer)
+    public function deliver()
     {
         if(! $this->queue){
 
-            return $mailer->send($this->view,$this->data,function($message){
+            return app('mailer')->send($this->view,$this->data,function($message){
                 $message->to($this->email,$this->to)->subject($this->subject);
                 
                 if(is_callable($this->options)){
@@ -96,7 +95,7 @@ abstract class Mailer
         $subject = $this->subject;
         $options = $this->options;
 
-        return $mailer->queue($this->view,$this->data,function($message) use($email,$to,$subject,$options){
+        return app('mailer')->queue($this->view,$this->data,function($message) use($email,$to,$subject,$options){
             $message->to($email,$to)->subject($subject);
             
             if(is_callable($options)){
