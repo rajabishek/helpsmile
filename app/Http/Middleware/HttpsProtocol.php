@@ -16,7 +16,7 @@ class HttpsProtocol
     public function handle($request, Closure $next)
     {
         if($forwardedFor = $request->headers->get('X_FORWARDED_FOR')) {
-            $forwardedIps = explode(", ", $forwarded_for);
+            $forwardedIps = explode(", ", $forwardedFor);
 
             foreach($forwardedIps as $forwardedIp) {
                 if( \Symfony\Component\HttpFoundation\IpUtils::checkIp($forwardedIp, $proxyIps) ) {
