@@ -23,7 +23,7 @@
                     </div>
                     <div class="row visibility-hidden" data-toggle="appear" data-class="animated fadeInUp">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <img class="img-responsive pull-b" src="{{ secure_asset('assets/img/various/promo1.jpg') }}" alt="">
+                            <img class="img-responsive pull-b" src="{{ asset('assets/img/various/promo1.jpg') }}" alt="">
                         </div>
                     </div>
                     <!-- END Section Content -->
@@ -194,7 +194,7 @@
                     <!-- Section Content -->
                     <div class="row items-push-2x push-50-t text-center">
                         <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150">
-                            <img class="img-avatar img-avatar-thumb" src="{{ secure_asset('assets/img/avatars/avatar6.jpg') }}" alt="">
+                            <img class="img-avatar img-avatar-thumb" src="{{ asset('assets/img/avatars/avatar6.jpg') }}" alt="">
                             <div class="text-warning push-10-t push-15">
                                 <i class="fa fa-fw fa-star"></i>
                                 <i class="fa fa-fw fa-star"></i>
@@ -206,7 +206,7 @@
                             <div class="h6 text-gray">- Evelyn Willis</div>
                         </div>
                         <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150" data-timeout="150">
-                            <img class="img-avatar img-avatar-thumb" src="{{ secure_asset('assets/img/avatars/avatar16.jpg') }}" alt="">
+                            <img class="img-avatar img-avatar-thumb" src="{{ asset('assets/img/avatars/avatar16.jpg') }}" alt="">
                             <div class="text-warning push-10-t push-15">
                                 <i class="fa fa-fw fa-star"></i>
                                 <i class="fa fa-fw fa-star"></i>
@@ -218,7 +218,7 @@
                             <div class="h6 text-gray">- Eugene Burke</div>
                         </div>
                         <div class="col-sm-4 visibility-hidden" data-toggle="appear" data-offset="-150" data-timeout="300">
-                            <img class="img-avatar img-avatar-thumb" src="{{ secure_asset('assets/img/avatars/avatar6.jpg') }}" alt="">
+                            <img class="img-avatar img-avatar-thumb" src="{{ asset('assets/img/avatars/avatar6.jpg') }}" alt="">
                             <div class="text-warning push-10-t push-15">
                                 <i class="fa fa-fw fa-star"></i>
                                 <i class="fa fa-fw fa-star"></i>

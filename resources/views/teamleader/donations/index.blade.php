@@ -3,8 +3,8 @@
 @section('title','Donations')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
 @parent
 @stop
 
@@ -164,9 +164,9 @@
 
 @section('scripts')
 @parent
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
-{!! Html::script('assets/js/core/jquery.slimscroll.min.js', [], true) !!}
-{!! Html::script('packages/handlebars/handlebars.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
+{!! Html::script('assets/js/core/jquery.slimscroll.min.js') !!}
+{!! Html::script('packages/handlebars/handlebars.min.js') !!}
 
 <!-- Page JS Code -->
 <script id="notification-template" type="text/x-handlebars-template">
@@ -177,7 +177,7 @@
     <div><small class="text-muted">@{{ happened_at }}</small></div>
 </li>
 </script>
-{!! Html::script('js/notifications.js', [], true) !!}
+{!! Html::script('js/notifications.js') !!}
 <script>
 	$(function () {
 		App.initHelpers(['select2','slimscroll']);

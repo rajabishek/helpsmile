@@ -3,8 +3,8 @@
 @section('title', 'Download Reports')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
 @parent
 @stop
 
@@ -105,7 +105,7 @@
 
 @section('scripts')
 @parent
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
 <script>
     $(function () {
         App.initHelpers(['select2']);

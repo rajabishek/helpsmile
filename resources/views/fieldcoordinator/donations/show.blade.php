@@ -3,8 +3,8 @@
 @section('title', 'Donation Details')
 
 @section('styles')
-{!! Html::style('assets/js/plugins/select2/select2.min.css', [], true) !!}
-{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css', [], true) !!}
+{!! Html::style('assets/js/plugins/select2/select2.min.css') !!}
+{!! Html::style('assets/js/plugins/select2/select2-bootstrap.min.css') !!}
 @parent
 @stop
 
@@ -192,11 +192,11 @@
 @section('scripts')
 @parent
 <!-- Page JS Plugins -->
-{!! Html::script('assets/js/plugins/select2/select2.full.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/select2/select2.full.min.js') !!}
 {!! Html::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places') !!}
 
 <!-- Page JS Code -->
-{!! Html::script('js/plotmap.js', [], true) !!}
+{!! Html::script('js/plotmap.js') !!}
 <script>
     $(function () {
         App.initHelpers(['select2']);

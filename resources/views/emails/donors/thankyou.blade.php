@@ -9,7 +9,7 @@
 <!-- ======= TOP BANNER MODULE ====== -->
 <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="container">
     <tr>
-        <td background="{{ secure_asset('assets/img/emails/topbanner.jpg') }}" align="center" valign="top" style="background-color: #6a6a6a;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;background-position: top center;">
+        <td background="{{ asset('assets/img/emails/topbanner.jpg') }}" align="center" valign="top" style="background-color: #6a6a6a;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;background-position: top center;">
             <!--[if gte mso 9]>
             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
                 <v:fill type="frame" src="images/topbanner.jpg" color="#6a6a6a" />
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td align="center" valign="middle">
-                        <img src="{{ secure_asset('assets/img/emails/underline.png') }}" width="60" height="10" alt="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;border: none;text-align:center;" />
+                        <img src="{{ asset('assets/img/emails/underline.png') }}" width="60" height="10" alt="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;border: none;text-align:center;" />
                     </td>
                 </tr>
             </table>

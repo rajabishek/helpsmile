@@ -61,8 +61,8 @@
 @section('scripts')
 @parent
 <!-- Page JS Plugins -->
-{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js', [], true) !!}
+{!! Html::script('assets/js/plugins/jquery-validation/jquery.validate.min.js') !!}
 
 <!-- Page JS Code -->
-{!! Html::script('js/reminder.js', [], true) !!}
+{!! Html::script('js/reminder.js') !!}
 @stop
