@@ -33,7 +33,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon-180x180.png') }}">
         <!-- END Icons -->
 
-        {!! Html::script('packages/trmix/dist/trmix.min.js') !!}
+        {!! Html::script('packages/trmix/dist/trmix.min.js', [], true) !!}
 
         @section('styles')
         <!-- Stylesheets -->
@@ -41,12 +41,12 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
         <!-- Page JS Plugins CSS -->
-        {!! Html::style('assets/js/plugins/slick/slick.min.css') !!}
-        {!! Html::style('assets/js/plugins/slick/slick-theme.min.css') !!}
+        {!! Html::style('assets/js/plugins/slick/slick.min.css', [], true) !!}
+        {!! Html::style('assets/js/plugins/slick/slick-theme.min.css', [], true) !!}
 
         <!-- Bootstrap and OneUI CSS framework -->
-        {!! Html::style('assets/css/bootstrap.min.css') !!}
-        {!! Html::style('assets/css/oneui.css',['id' => 'css-main']) !!}
+        {!! Html::style('assets/css/bootstrap.min.css', [], true) !!}
+        {!! Html::style('assets/css/oneui.css',['id' => 'css-main'], [], true) !!}
         @show
         <!-- END Stylesheets -->
     </head>
@@ -56,18 +56,18 @@
         @section('scripts')
         
         <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
-        {!! Html::script('assets/js/core/jquery.min.js') !!}
-        {!! Html::script('assets/js/core/bootstrap.min.js') !!}
-        {!! Html::script('assets/js/core/jquery.slimscroll.min.js') !!}
-        {!! Html::script('assets/js/core/jquery.scrollLock.min.js') !!}
-        {!! Html::script('assets/js/core/jquery.appear.min.js') !!}
-        {!! Html::script('assets/js/core/jquery.countTo.min.js') !!}
-        {!! Html::script('assets/js/core/jquery.placeholder.min.js') !!}
-        {!! Html::script('assets/js/core/js.cookie.min.js') !!}
-        {!! Html::script('assets/js/app.js') !!}
+        {!! Html::script('assets/js/core/jquery.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/bootstrap.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/jquery.slimscroll.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/jquery.scrollLock.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/jquery.appear.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/jquery.countTo.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/jquery.placeholder.min.js', [], true) !!}
+        {!! Html::script('assets/js/core/js.cookie.min.js', [], true) !!}
+        {!! Html::script('assets/js/app.js', [], true) !!}
 
         <!-- Page Plugins -->
-        {!! Html::script('assets/js/plugins/slick/slick.min.js') !!}
+        {!! Html::script('assets/js/plugins/slick/slick.min.js', [], true) !!}
 
         <!-- Page JS Code -->
         
